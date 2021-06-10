@@ -3,13 +3,13 @@ const Vonage = require('@vonage/server-sdk');
 const router = express.Router();
 
 const vonage = new Vonage({
-    apiKey: "c64a2366",
-    apiSecret: "hoADWvtRoe3nfljh"
+    apiKey: process.env.VONAGE_API_KEY,
+    apiSecret: process.env.VONAGE_API_SECRET
 })
 
 const from = "Come to online..."
 const to = "919505629940"
-const text = 'https://powerful-dusk-40978.herokuapp.com/learn.html?name=Friend1'
+const text = 'https://angelll.xyz'
 
 router.get('/', (req, res) => {
     vonage.message.sendSms(from, to, text, (err, responseData) => {
